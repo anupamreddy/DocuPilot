@@ -53,6 +53,9 @@ venv\Scripts\activate     # on Windows
 
 # Install dependencies
 pip install -r requirements.txt
+
+#Export OpenAI API Key.
+export OPENAI_API_KEY=<replace your key>
 ```
 
 ---
@@ -62,7 +65,7 @@ pip install -r requirements.txt
 Run DocuPilot on a document:
 
 ```bash
-python main.py --doc path/to/document.txt
+python main.py execute --filepath path/to/document.txt
 ```
 
 * DocuPilot processes **3–4 lines at a time**.
