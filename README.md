@@ -93,6 +93,7 @@ DocuPilot/
 
 ## 🛣️ Roadmap
 
+* [ ] Make the host port and SSH user dynamic. (Currently, they are hardcoded)
 * [ ] Support for multiple document formats (Markdown, PDF, HTML)
 * [ ] Web interface for live execution view
 * [ ] Knowledge base to remember past human-in-the-loop answers (vector DB v2)
