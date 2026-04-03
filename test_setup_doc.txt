@@ -1,0 +1,64 @@
+=== Basic System Preparation ===
+
+First, make sure the machine is up to date.  
+Update the package index and upgrade all installed packages so we’re starting from a clean slate.  
+It’s also useful to have a few common utilities, so install git, curl, wget, and unzip at this point.  
+
+Python support is needed later, so ensure Python3 and pip3 are present.  
+For compilation tasks, include the build-essential package group as well.  
+
+---
+
+=== SSH Access Configuration ===
+
+Check that the OpenSSH server is installed.  
+If it’s missing, install it and then start the ssh service.  
+Also enable ssh to start automatically on boot.  
+
+We’ll need a dedicated user for administration.  
+Create a user called “devops” and set a password for it.
+After that, add the devops user to the sudo group.  
+
+It’s good practice to double-check sshd_config.  
+Allow password authentication if required and restart the ssh service to apply the change.  
+
+---
+
+=== Preparing Tools Directory and Node.js ===
+
+Create a directory at /opt/tools and give ownership to the devops user.  
+Next, we’ll install Node.js.  
+Download LTS binary tarball  
+Extract the tarball under /opt/tools/node and add /opt/tools/node/bin to the PATH for all users.  
+Verify node and npm are working by checking their versions.  
+
+---
+
+=== Web Server Setup ===
+
+Install nginx from the package manager.  
+Enable it to start on boot and bring the service up.  
+To test it, drop a sample index.html in /var/www/html that just says:  
+“Hello from Ansible Setup!”.  
+
+At this point, open up the firewall so that HTTP (port 80) traffic is allowed.  
+If you’re unsure whether the system uses ufw or firewalld, ask the human for clarification.  
+Finally, confirm nginx is reachable at http://<server-ip> 
+
+---
+
+=== Container Runtime ===
+
+For container support, install Docker using the official convenience script.  
+Once it’s installed, add the devops user to the docker group.  
+Verify the setup by running the hello-world container.  
+
+Docker Compose is also handy.  
+Install it from the GitHub release page (ask human if the version isn’t specified).  
+
+---
+
+=== Final Check ===
+
+When everything is done, print out a simple message like:  
+“Setup Complete”.  
