@@ -57,38 +57,6 @@ pip install -r requirements.txt
 #Export OpenAI API Key.
 export OPENAI_API_KEY=<replace your key>
 ```
-
----
-
-## 🧑‍💻 Usage
-
-Run DocuPilot on a document:
-
-```bash
-python main.py execute --filepath path/to/document.txt
-```
-
-* DocuPilot processes **3–4 lines at a time**.
-* Executes instructions via **Ansible**.
-* If uncertain, it asks the **human-in-the-loop (HIL)** for clarification.
-* Stores human feedback in a **vector database** for future reference.
-* Updates a running fixed-length **summary** in `summary.md`.
-
----
-
-## 📂 Project Structure
-
-```
-DocuPilot/
-├── main.py              # Entry point
-├── agent/               # Core agent logic
-├── ansible_runner/      # Ansible integration
-├── vector_store/        # Vector DB for HIL learnings
-├── docs/                # Example documents
-├── summary.md           # Live updated execution summary
-└── requirements.txt     # Dependencies
-```
-
 ---
 
 ## 🛣️ Roadmap
@@ -105,15 +73,3 @@ DocuPilot/
 
 Contributions, issues, and feature requests are welcome!
 Feel free to open a PR or raise an issue.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-
----
-
-⚡ **DocuPilot** – Automating docs, few instructions at a time.
-
----
